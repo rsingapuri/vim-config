@@ -26,19 +26,27 @@ Plugin 'derekwyatt/vim-scala'
 call vundle#end()
 
 "Appearance settings
+"
+"For Solarized
+"if !has("gui_running")
+    "let g:solarized_termcolors=16
+"endif
+"colorscheme solarized
+
+"For Monokai
+colorscheme monokai
+
 if has ("syntax")
     syntax on
 endif
 if has("gui_running")
-    colorscheme solarized
-    set background=dark
     set guifont=Monaco:h11
     set antialias
     "set noantialias "Remove for most fonts
     "Il1egal = 0O
-    set transparency=15
+    "set transparency=15
     set guioptions-=r
-    set lines=24
+    set lines=25
     set columns=84
     set nocursorline
 endif
@@ -56,8 +64,8 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
 autocmd FileType ruby setlocal shiftwidth=2 tabstop=2
 
 "Key mappings
-nnoremap <C-F> :call GoFullscreen()<CR>
-nnoremap <C-S> :call EndFullscreen()<CR>
+"nnoremap <C-F> :call GoFullscreen()<CR>
+"nnoremap <C-S> :call EndFullscreen()<CR>
 nnoremap <C-A> :%s/\ \ *$//g<CR>
 nnoremap <C-L> :wincmd l<CR>
 nnoremap <C-H> :wincmd h<CR>
@@ -74,17 +82,17 @@ autocmd BufRead,BufNewFile *.scala set filetype=scala
 imap <C-c> <CR><Esc>O
 
 "Function definitions
-function GoFullscreen()
-    set fullscreen
-    set transparency=0
-    "execute "NERDTree"
-    "wincmd l
-endfunction
+"function GoFullscreen()
+    "set fullscreen
+    "set transparency=0
+    ""execute "NERDTree"
+    ""wincmd l
+"endfunction
 
-function EndFullscreen()
-    set nofullscreen
-    set transparency=15
-    set lines=24
-    set columns=84
-    "execute "NERDTreeClose"
-endfunction
+"function EndFullscreen()
+    "set nofullscreen
+    "set transparency=15
+    "set lines=24
+    "set columns=84
+    ""execute "NERDTreeClose"
+"endfunction
