@@ -8,7 +8,7 @@ set autoindent
 set nocompatible
 filetype off
 filetype plugin indent on
-set rtp+=~/.vim/vundle/
+set rtp+=~/.vim/Vundle.vim/
 call vundle#begin()
 Plugin 'gmarik/vundle'
 
