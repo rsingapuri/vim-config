@@ -7,10 +7,9 @@ set autoindent
 "Vundle setup
 set nocompatible
 filetype off
-filetype plugin indent on
-set rtp+=~/.vim/Vundle.vim/
+set rtp+=~/scripts/vim-config/.vim/Vundle.vim/
 call vundle#begin()
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 "Bundles
 Plugin 'bling/vim-airline'
@@ -21,9 +20,15 @@ Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'Raimondi/delimitMate' 
+Plugin 'Raimondi/delimitMate'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'scrooloose/syntastic'
+Plugin 'dougireton/vim-chef'
+Plugin 'Valloric/YouCompleteMe'
 call vundle#end()
+
+"Post-Vundle setup
+filetype plugin indent on
 
 "Appearance settings
 "
@@ -31,6 +36,7 @@ call vundle#end()
 "if !has("gui_running")
     "let g:solarized_termcolors=16
 "endif
+"set bg=dark
 "colorscheme solarized
 
 "For Monokai
@@ -45,9 +51,9 @@ if has("gui_running")
     "set noantialias "Remove for most fonts
     "Il1egal = 0O
     "set transparency=15
-    set guioptions-=r
     set lines=25
     set columns=84
+    set guioptions-=r
     set nocursorline
 endif
 set ruler
@@ -80,6 +86,9 @@ autocmd BufRead,BufNewFile *.scala set filetype=scala
 
 "JS
 imap <C-c> <CR><Esc>O
+
+"Syntastic
+let g:syntastic_ruby_checkers=['rubocop']
 
 "Function definitions
 "function GoFullscreen()
