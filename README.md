@@ -14,6 +14,12 @@ git submodule update --init --recursive
 You'll need to create symlinks in your home directory the `.vim` directory
 and `.vimrc` file.
 
+Start by installing the plugins in Vim with:
+
+```
+:PluginInstall
+```
+
 You'll also need to compile YouCompleteMe and Command-T.
 
 To install YouCompleteMe:
