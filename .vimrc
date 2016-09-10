@@ -25,6 +25,10 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'scrooloose/syntastic'
 Plugin 'dougireton/vim-chef'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'wincent/command-t'
+Plugin 'morhetz/gruvbox'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'tpope/vim-fugitive'
 call vundle#end()
 
 "Post-Vundle setup
@@ -40,7 +44,11 @@ filetype plugin indent on
 "colorscheme solarized
 
 "For Monokai
-colorscheme monokai
+"colorscheme monokai
+
+"For Gruvbox
+colorscheme Gruvbox
+set bg=dark
 
 if has ("syntax")
     syntax on
@@ -57,7 +65,8 @@ if has("gui_running")
     set nocursorline
 endif
 set ruler
-set rnu
+"Relative line numbering seems to cause performance issues with certain files
+"set rnu
 autocmd InsertLeave * :set rnu
 autocmd InsertEnter * :set nornu | set nu
 set numberwidth=4
@@ -77,6 +86,7 @@ nnoremap <C-L> :wincmd l<CR>
 nnoremap <C-H> :wincmd h<CR>
 nnoremap <C-J> :wincmd j<CR>
 nnoremap <C-K> :wincmd k<CR>
+nnoremap † :CommandT<CR>
 
 "Fixes
 
@@ -89,6 +99,10 @@ imap <C-c> <CR><Esc>O
 
 "Syntastic
 let g:syntastic_ruby_checkers=['rubocop']
+
+"Command-T
+let g:CommandTMaxFiles=200000
+let g:CommandTFileScanner='git'
 
 "Function definitions
 "function GoFullscreen()
