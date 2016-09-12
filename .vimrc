@@ -54,7 +54,7 @@ if has ("syntax")
     syntax on
 endif
 if has("gui_running")
-    set guifont=Monaco:h11
+    set guifont=FiraMono-Regular:h11
     set antialias
     "set noantialias "Remove for most fonts
     "Il1egal = 0O
@@ -67,8 +67,8 @@ endif
 set ruler
 "Relative line numbering seems to cause performance issues with certain files
 "set rnu
-autocmd InsertLeave * :set rnu
-autocmd InsertEnter * :set nornu | set nu
+"autocmd InsertLeave * :set rnu
+"autocmd InsertEnter * :set nornu | set nu
 set numberwidth=4
 set go-=L
 set scrolloff=7

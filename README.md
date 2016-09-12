@@ -11,6 +11,8 @@ git submodule update --init --recursive
 ```
 
 ### Installation Instructions
+You can find FiraMono-Regular at https://github.com/mozilla/Fira
+
 You'll need to create symlinks in your home directory the `.vim` directory
 and `.vimrc` file.
 
